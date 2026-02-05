@@ -2,9 +2,14 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap", // Faster font loading
+  preload: true, // Preload fonts
+});
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://aurex.vivekkk.in"),
   title: "Aurex | The Future of Payments",
   description: "Accept, route, and move money with a modern payment platform built for reliability and growth.",
   keywords: ["payments", "payment gateway", "payment infrastructure", "fintech", "payment processing", "online payments", "digital payments"],
@@ -22,7 +27,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Aurex - The Future of Payments",
@@ -36,7 +41,7 @@ export const metadata: Metadata = {
     title: "Aurex | The Future of Payments",
     description: "Accept, route, and move money with a modern payment platform built for reliability and growth.",
     creator: "@v1v3k__",
-    images: ["/twitter-image.png"],
+    images: ["/twitter-image.jpg"],
   },
 
   // Additional metadata
