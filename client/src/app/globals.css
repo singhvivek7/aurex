@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius: 0.75rem;
+}
+
+:root {
+  /* Premium Bluish Light Theme */
+  --background: #ffffff;
+  /* Clean white */
+  --foreground: #0f172a;
+  /* Slate 900 - Deep Blue Black */
+
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+
+  --primary: #2563eb;
+  /* Blue 600 - Vibrant Trustworthy Blue */
+  --primary-foreground: #ffffff;
+
+  --secondary: #eff6ff;
+  /* Blue 50 - Very light blue for secondary backgrounds */
+  --secondary-foreground: #1e40af;
+  /* Blue 800 */
+
+  --muted: #f1f5f9;
+  /* Slate 100 - Cool Grey */
+  --muted-foreground: #64748b;
+  /* Slate 500 */
+
+  --accent: #f8fafc;
+  /* Slate 50 */
+  --accent-foreground: #0f172a;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #f8fafc;
+
+  --border: #e2e8f0;
+  /* Slate 200 - Cool Border */
+  --input: #e2e8f0;
+  --ring: #2563eb;
+}
+
+.dark {
+  /* Premium Bluish Dark Theme */
+  --background: #0a0e1a;
+  /* Very dark blue-black */
+  --foreground: #f1f5f9;
+  /* Slate 100 - Off white */
+
+  --card: #111827;
+  /* Gray 900 - Dark card */
+  --card-foreground: #f1f5f9;
+
+  --popover: #111827;
+  --popover-foreground: #f1f5f9;
+
+  --primary: #3b82f6;
+  /* Blue 500 - Slightly brighter for dark mode */
+  --primary-foreground: #ffffff;
+
+  --secondary: #1e293b;
+  /* Slate 800 - Dark secondary */
+  --secondary-foreground: #93c5fd;
+  /* Blue 300 */
+
+  --muted: #1e293b;
+  /* Slate 800 */
+  --muted-foreground: #94a3b8;
+  /* Slate 400 */
+
+  --accent: #1e293b;
+  /* Slate 800 */
+  --accent-foreground: #f1f5f9;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #f8fafc;
+
+  --border: #1e293b;
+  /* Slate 800 - Subtle dark border */
+  --input: #1e293b;
+  --ring: #3b82f6;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Performance optimizations for animations */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+}
+
+/* Global performance optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom text selection highlight */
+::selection {
+  background-color: #3b82f6;
+  /* Blue 500 - Primary brand color */
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+/* Selection in code blocks */
+pre::selection,
+code::selection {
+  background-color: #2563eb;
+  /* Slightly darker blue for code */
+  color: #ffffff;
+}
+
+pre::-moz-selection,
+code::-moz-selection {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
